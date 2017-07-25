@@ -1,13 +1,15 @@
 import java.util.Arrays;
 public class MainMethod {
     public static void main(String[] args) {
-        int[] list3 = new int[]{5, 4, 0, 37, 0, 0, 10};
-        int[] list2 = new int[]{5, 4, 0, 38, 0, 0, 10};
-        ListMethod firstList = new ListMethod();
-        ListMethod secondList = new ListMethod();
 
-        firstList.lstV = list3;
-        secondList.lstV = list2;
+        Integer [] list3 = new Integer[] {5, 4, 0, 37, 0, 0, 10};
+        Integer [] list2 = new Integer[] {5, 4, 0, 37, 0, 0, 10};
+
+        ListMethod <Integer> firstList = new ListMethod<>(list3);
+        ListMethod<Integer> secondList = new ListMethod<>(list2);
+
+//        firstList.lstV = list3;
+//        secondList.lstV = list2;
 
         System.out.println(firstList.hashCode());
 
@@ -21,13 +23,13 @@ public class MainMethod {
 
         System.out.println("List  " + Arrays.toString(list3));
         System.out.println();
-        System.out.println("Summ of list = " + firstList.countSum(firstList.lstV));
+        System.out.println("Summ of list = " + firstList.countSum());
         System.out.println();
 
-        System.out.println("Lenght of list = " + firstList.countlengh(firstList.lstV));
+        System.out.println("Lenght of list = " + firstList.countlengh());
         System.out.println();
 
-        System.out.println("Avarage number is " + firstList.countAvarage(firstList.lstV));
+        System.out.println("Avarage number is " + firstList.countAvarage());
         System.out.println();
 
     }

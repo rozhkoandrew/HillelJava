@@ -1,39 +1,42 @@
-class ListMethod {
+class ListMethod<T extends Number> {
 
-    int[] lstV;
+    T [] lstV;
 
-    /**
-     * @param lst shoud reveive some non-empty list of integers
-     * @return return integer summ of all values in the list
-     */
-    int countSum(int lst[]) {
-        int sum = 0;
-        for (int aLst : lst) {
-            sum += aLst;
-        }
-        return sum;
+
+    ListMethod(T [] l){
+        this.lstV = l;
+
     }
 
     /**
-     * @param lst shoud reveive some non-empty list of integers
+     * @return return integer summ of all values in the list
+     */
+    int countSum() {
+        double sum = 0;
+        for (T aLst : this.lstV) {
+             sum += aLst;
+        }
+        return  sum;
+    }
+
+    /**
      * @return integer lenght of the list
      */
 
-    int countlengh(int lst[]) {
+    int countlengh() {
         int lengh = 0;
-        for (int i = 1; i <= lst.length; i++) {
+        for (int i = 1; i <= this.lstV.length; i++) {
             lengh = i;
         }
         return lengh;
     }
 
     /**
-     * @param lst lst shoud reveive some non-empty list of integers
      * @return integer avarage number of lst
      */
 
-    int countAvarage(int lst[]) {
-        return countSum(lst) / countlengh(lst);
+    int countAvarage() {
+        return countSum() / countlengh();
     }
 
     /**
@@ -46,9 +49,9 @@ class ListMethod {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + countSum(this.lstV);
-        result = prime * result + countAvarage(lstV);
-        result = prime * result + countlengh(lstV);
+        result = prime * result + countSum();
+        result = prime * result + countAvarage();
+        result = prime * result + countlengh();
         return result;
     }
 
@@ -69,6 +72,14 @@ class ListMethod {
     }
 
 }
+
+
+
+
+
+
+
+
 
 
 
