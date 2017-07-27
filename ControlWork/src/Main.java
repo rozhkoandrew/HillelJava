@@ -1,7 +1,11 @@
 /**
  * Created by andrejrozko on 27.07.17.
  */
+import java.util.Collections;
+import java.util.Collection;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 public class Main {
 
@@ -18,12 +22,13 @@ public class Main {
         list1.add(second);
         list1.add(third);
 
-        System.out.println();
+        System.out.println(calculateCoast(list1, Colour.BLUE));
+        System.out.println(findMostExpensive(list1));
 
     }
 
 
-    private double calculateCoast (List<Shape> shapes,Colour filterColour){
+    private static double calculateCoast (List<Shape> shapes,Colour filterColour){
         double coast = 0;
         for (Shape elem : shapes){
             coast += elem.size() * filterColour.coast;
@@ -32,18 +37,14 @@ public class Main {
         return coast;
     }
 
-    private int findMostExpensive (List<Shape> shapes){
-        int moxtExpensive = 0;
+    private static Shape findMostExpensive (List<Shape> shapes){
 
-        for (int i = 0 ; i < shapes.size()-1; i ++){
-            if (shapes.get(i).compareTo(shapes.get(i + 1)) > moxtExpensive) {
-                moxtExpensive = (int )shapes.get(i).size();
+        Collections.sort(shapes);
+        return shapes.get(0);
+
 
             }
 
-        }
-        return moxtExpensive;
-    }
 
 
 }
