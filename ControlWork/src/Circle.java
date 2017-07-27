@@ -7,8 +7,9 @@ public class Circle implements Shape {
     int perimetr;
     Colour colour;
 
-    Circle(int p, Colour blue){
+    Circle(int p, Colour c){
         this.perimetr = p;
+        this.colour = c;
     }
 
 

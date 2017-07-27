@@ -13,7 +13,9 @@ public class Squre implements Shape {
         this.side = s;
     }
 
-    public Squre(int i, Colour blue) {
+    public Squre(int i, Colour c) {
+        this.side = i;
+        this.colour = c;
     }
 
     @Override

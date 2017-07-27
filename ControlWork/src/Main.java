@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
 
         Shape first = new Circle(20,Colour.BLUE);
-        Shape second = new Squre(20,Colour.GREEN);
-        Shape third = new Squre(20,Colour.RED);
+        Shape second = new Squre(10,Colour.GREEN);
+        Shape third = new Squre(15,Colour.RED);
 
 
         List<Shape> list1 = new ArrayList<>();
@@ -22,8 +22,8 @@ public class Main {
         list1.add(second);
         list1.add(third);
 
-        System.out.println(calculateCoast(list1, Colour.BLUE));
-        System.out.println(findMostExpensive(list1));
+        System.out.println(calculateCoast(list1, Colour.RED));
+        //System.out.println(findMostExpensive(list1));
 
     }
 
@@ -31,7 +31,12 @@ public class Main {
     private static double calculateCoast (List<Shape> shapes,Colour filterColour){
         double coast = 0;
         for (Shape elem : shapes){
-            coast += elem.size() * filterColour.coast;
+            //System.out.println(elem.colour().coast + " ||||| " + filterColour.coast);
+            if (elem.colour().coast == filterColour.coast){
+                coast += elem.size() * filterColour.coast;
+
+            }
+
 
         }
         return coast;
