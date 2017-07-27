@@ -1,15 +1,17 @@
 /**
  * Created by andrejrozko on 27.07.17.
  */
+
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.Math;
+
 public class Squre implements Shape {
 
     int side;
     Colour colour;
 
-    Squre(int s){
+    Squre(int s) {
         this.side = s;
     }
 
@@ -38,7 +40,7 @@ public class Squre implements Shape {
 
     @Override
     public int compareTo(@NotNull Object o) {
-        return 0;
+        return (int) (this.size() * this.colour().coast - size() * colour().coast);
     }
 
 //    @Override

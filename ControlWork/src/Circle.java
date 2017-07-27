@@ -7,7 +7,7 @@ public class Circle implements Shape {
     int perimetr;
     Colour colour;
 
-    Circle(int p, Colour c){
+    Circle(int p, Colour c) {
         this.perimetr = p;
         this.colour = c;
     }
@@ -33,11 +33,7 @@ public class Circle implements Shape {
 
     @Override
     public int compareTo(@NotNull Object o) {
-        return 0;
+        return (int) (this.size() * this.colour().coast - size() * colour().coast);
     }
-//
-//    @Override
-//    public int compareTo(Object o){
-//        return (int) (this.size() + this.colour().coast - size() + colour().coast);
-//    }
+
 }
