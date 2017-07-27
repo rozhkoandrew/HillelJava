@@ -1,11 +1,12 @@
+import com.sun.xml.internal.xsom.XSWildcard;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by andrejrozko on 27.07.17.
  */
 public class Circle implements Shape {
-    int perimetr;
-    Colour colour;
+    private int perimetr;
+    private Colour colour;
 
     Circle(int p, Colour c) {
         this.perimetr = p;
@@ -23,6 +24,7 @@ public class Circle implements Shape {
         return colour;
     }
 
+
     @Override
     public String toString() {
         return "Circle{" +
@@ -32,8 +34,8 @@ public class Circle implements Shape {
     }
 
     @Override
-    public int compareTo(@NotNull Object o) {
-        return (int) (this.size() * this.colour().coast - size() * colour().coast);
+    public int compareTo(@NotNull Shape o) {
+        return (int) ((this.size() * this.colour().coast) - (o.size() * o.colour().coast));
     }
 
 }

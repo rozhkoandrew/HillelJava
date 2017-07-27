@@ -3,19 +3,16 @@
  */
 
 import org.jetbrains.annotations.NotNull;
+import sun.security.provider.SHA;
 
 import java.lang.Math;
 
 public class Squre implements Shape {
 
-    int side;
-    Colour colour;
+    private int side;
+    private Colour colour;
 
-    Squre(int s) {
-        this.side = s;
-    }
-
-    public Squre(int i, Colour c) {
+    Squre(int i, Colour c) {
         this.side = i;
         this.colour = c;
     }
@@ -30,6 +27,7 @@ public class Squre implements Shape {
         return this.colour;
     }
 
+
     @Override
     public String toString() {
         return "Squre{" +
@@ -39,9 +37,10 @@ public class Squre implements Shape {
     }
 
     @Override
-    public int compareTo(@NotNull Object o) {
-        return (int) (this.size() * this.colour().coast - size() * colour().coast);
+    public int compareTo(@NotNull Shape o) {
+        return (int) ((this.size() * this.colour().coast) - (o.size() * o.colour().coast));
     }
+
 
 //    @Override
 //    public int compareTo(Object o){
